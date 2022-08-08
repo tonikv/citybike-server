@@ -9,13 +9,6 @@ router.get('/about', (req, res) => {
   res.send('Handles access to citybike journeys data')
 })
 
-// Get journey by stations id
-router.get('/:id', async (req, res) => {
-    const queryID = req.params.id;
-    const journey = await Journey.find({ Departure_station_id: queryID }).limit(20);
-    res.json(JSON.stringify(journey));
-})
-
 // Get journeys sorted skipped and limited, according to request params.
 router.get('/sorted/:page/:limit/:sortBy/:sortOrder/:filter?', async (req, res) => {
     // Construct items for database query. Pass in defaults, if params are missing.
@@ -43,7 +36,7 @@ router.get('/sorted/:page/:limit/:sortBy/:sortOrder/:filter?', async (req, res) 
 })
 
 // Get information about station usage amount. Params are station names.
-router.get('/aggregate/:start/:end', async (req, res) => {
+router.get('/usage/:start/:end', async (req, res) => {
     const startName = req.params.start;
     const endName = req.params.end;
     try {
