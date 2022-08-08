@@ -12,7 +12,10 @@ app.use(cors());
 
 // Routes
 app.get('/', (req, res) => {
-    res.json({ message: "Welcome to citybike server", routes: ["/stations/all", "/stations/byFID/param1", "/journeys/sorted/param1/param2/param3/param4"] });
+    res.json({
+        message: "Welcome to citybike server",
+        routes: ["/stations/all", "/stations/byFID/param1", "/journeys/sorted/param1/param2/param3/param4"]
+    });
 })
 app.use('/stations', stationsRouter);
 app.use('/journeys', journeysRouter);
