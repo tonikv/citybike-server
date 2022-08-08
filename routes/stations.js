@@ -8,10 +8,10 @@ router.get('/about', (req, res) => {
   res.send('Handles access to citybike stations data')
 })
 
-// Get all stations sorted by FID
+// Get all stations sorted by station name
 router.get('/all', async (req, res) => {
   const stations = await Station.find({})
-    .sort("FID")
+    .sort("Nimi")
     .exec((err, stations) => {
       if (err) {
         res.status(500).json(err);
