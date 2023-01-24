@@ -12,7 +12,7 @@ This is the server-side component of a Citybike application. It is built using [
 
 To run the server, you will need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your machine.
 
-1. Clone the repository: `git clone https://github.com/tonik/citybike-server.git`
+1. Clone the repository: `git clone https://github.com/tonikv/citybike-server.git`
 2. Install dependencies: `npm install`
 3. Start the server: `npm start`
 
