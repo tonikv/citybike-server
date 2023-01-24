@@ -31,10 +31,10 @@ This server uses MongoDB Atlas as its database.
 
 To connect to the database, you will need to configure the following environment variable:
 
-- `MONGO_URI` - The URI to connect to the MongoDB Atlas cluster.
+- `MONGOURI` - The URI to connect to the MongoDB Atlas cluster.
 
 Below is provided connection string with only read access to database. It will expire 31.01.23
-`MONGO_URI=mongodb+srv://test:testonlyread@citybike.jzmzrm6.mongodb.net/bikedata?retryWrites=true&w=majority`
+`MONGOURI=mongodb+srv://test:testonlyread@citybike.jzmzrm6.mongodb.net/bikedata?retryWrites=true&w=majority`
 
 ## CSV Data Processing
 
