@@ -5,7 +5,6 @@ This is the server-side component of a Citybike application. It is built using [
 ## Features
 
 - Provides endpoints for retrieving information about bike stations and journeys.
-- Uses [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) to handle cross-origin requests.
 - Implements [Morgan](https://www.npmjs.com/package/morgan) for logging.
 
 ## Getting Started
@@ -15,9 +14,10 @@ To run the server, you will need to have [Node.js](https://nodejs.org/) and [npm
 1. Clone the repository: `git clone https://github.com/tonikv/citybike-server.git`
 2. CD into the directory: `cd citybike-server`
 3. Install dependencies: `npm install`
-4. Start the server: `npm start`
+4. Build the project: `npm run build`
+5. Start the server: `npm start`
 
-The server will be running on `http://localhost:3005` by default.
+The server will be running on `http://localhost:4000` by default.
 
 ## Endpoints
 
@@ -34,7 +34,7 @@ To connect to the database, you will need to configure the following environment
 
 - `MONGOURI` - The URI to connect to the MongoDB Atlas cluster.
 
-Below is provided connection string with only read access to database. It will expire 31.01.23
+Below is provided connection string with only read access to database.
 `MONGOURI=mongodb+srv://test:testonlyread@citybike.jzmzrm6.mongodb.net/bikedata?retryWrites=true&w=majority`
 
 ## CSV Data Processing
