@@ -1,5 +1,5 @@
 import express, { Application } from "express";
-import cors from "cors";
+//import cors from "cors";
 import morgan from "morgan";
 import { stationRoute } from "./routes/stations";
 import { journeyRoute } from "./routes/journeys";
@@ -12,9 +12,12 @@ databaseConnect();
 
 // Middleware
 app.use(morgan("combined"));
-app.use(cors());
+//app.use(cors());
 
 // Routes
+app.use("/", (_req, res) => {
+    res.status(200).json({ message: "Welcome to citybike API" });
+});
 app.use("/stations", stationRoute);
 app.use("/journeys", journeyRoute);
 
