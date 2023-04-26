@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QparseFilesStation(file) file - The CSV file containing information about bike stations.\\E$"}
