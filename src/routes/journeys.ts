@@ -19,6 +19,7 @@ journeyRoute.get("/about", (_req: Request, res: Response) => {
 journeyRoute.get("/topfive", async (_req, res) => {
   try {
     const topUsed = await fetchTopUsedJourneys();
+    console.log(topUsed)
     res.status(200).json(topUsed);
   } catch (err: any) {
     res.status(err.status).json(err.message);

@@ -11,9 +11,8 @@ const app: Application = express();
 databaseConnect();
 
 // Middleware
-app.use(express.json());
-app.use(cors());
 app.use(morgan("combined"));
+app.use(cors());
 
 // Routes
 app.use("/stations", stationRoute);
