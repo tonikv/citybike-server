@@ -15,7 +15,7 @@
     "strictNullChecks": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules", "dist", "src/**/*.tests.ts"]
