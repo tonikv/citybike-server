@@ -1,16 +1,31 @@
 import server from "../index";
 import supertest from "supertest";
 import mongoose from "mongoose";
+import { Station, Journey } from "../models";
+import { connectTestDatabase, insertTestData } from "../testDatabase";
 
 const requestWithSupertest = supertest(server);
 
+mongoose.connection.close();
+
 beforeAll(async () => {
+    await connectTestDatabase();
     jest.spyOn(console, "debug").mockImplementation(jest.fn());
 });
 
-afterAll(async () => {
-    mongoose.connection.close();
+beforeEach(async () => {
+    await insertTestData(); // stations length 3, journeys length 5
 });
+
+afterEach(async () => {
+    await Station.deleteMany({});
+    await Journey.deleteMany({});
+});
+
+afterAll(async () => {
+    await mongoose.connection.close();
+});
+
 
 describe("Journeys route", () => {
     it("GET /journeys/about/ should return a message", async () => {
@@ -30,13 +45,13 @@ describe("Journeys route", () => {
         });
     });
 
-    it("GET /journeys/sorted/0/10/Departure_station_name/asc/ should give ten results", async () => {
+    it("GET /journeys/sorted/0/10/Departure_station_name/asc/ should give 5 results", async () => {
         const response = await requestWithSupertest.get(
             "/journeys/sorted/0/10/Departure_station_name/asc/"
         );
         expect(response.status).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
-        expect(response.body.length).toBe(10);
+        expect(response.body.length).toBe(4);
     });
 });
 
@@ -49,10 +64,10 @@ describe("Stations route", () => {
         });
     });
 
-    it("GET /stations/all/ should give all 457 results", async () => {
+    it("GET /stations/all/ should give all 3 results", async () => {
         const response = await requestWithSupertest.get("/stations/all");
         expect(response.body).toBeInstanceOf(Array);
-        expect(response.body.length).toBe(457);
+        expect(response.body.length).toBe(3);
     });
 
     it("GET /stations/byFID/ should give one result", async () => {
