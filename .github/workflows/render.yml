@@ -6,8 +6,15 @@ on:
             - typescript # Change this to the branch you want to trigger the CI on
 
 jobs:
-    build-and-deploy:
+    build-and-test:
         runs-on: ubuntu-latest
+
+        services:
+          mongodb:
+          image: mongo:latest
+          ports:
+              - 27017:27017
+
 
         steps:
             - name: Checkout code
@@ -26,3 +33,6 @@ jobs:
 
             - name: Run tests
               run: npm test
+              env:
+              MONGO_URL: mongodb://localhost:27017/bikedata
+
