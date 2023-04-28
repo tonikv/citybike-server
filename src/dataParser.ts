@@ -1,6 +1,5 @@
-/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
+/* eslint-disable no-console */
 import fs from "fs";
 import papa from "papaparse";
 import { Journey, Station } from "./models";
