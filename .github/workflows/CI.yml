@@ -33,11 +33,19 @@ jobs:
             - name: Lint
               run: npm run lint
 
-            - name: Build
-              run: npm run build
-
             - name: Run tests
               run: npm test
               env:
                   MONGO_URL: mongodb://localhost:27017/bikedata
 
+            - name: Build
+              run: npm run build
+
+            - name: Install Render CLI
+              run: npm install -g render-cli
+
+            - name: Deploy to Render
+              run: render deploy --force
+              env:
+                RENDER_EMAIL: ${{ secrets.RENDER_EMAIL }}
+                RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
