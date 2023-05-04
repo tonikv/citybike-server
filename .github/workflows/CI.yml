@@ -38,5 +38,5 @@ jobs:
               env:
                   MONGO_URL: mongodb://localhost:27017/bikedata
 
-            -name : Build
+            - name: Build
               run: npm run build
