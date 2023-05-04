@@ -4,8 +4,8 @@ This is the server-side component of a Citybike application. It is built using [
 
 ## Features
 
-- Provides endpoints for retrieving information about bike stations and journeys.
-- Implements [Morgan](https://www.npmjs.com/package/morgan) for logging.
+-   Provides endpoints for retrieving information about bike stations and journeys.
+-   Implements [Morgan](https://www.npmjs.com/package/morgan) for logging.
 
 ## Getting Started
 
@@ -21,10 +21,9 @@ The server will be running on `http://localhost:4000` by default.
 
 ## Endpoints
 
-- `GET /` - Welcome message and list of available routes
-- `GET /stations/all` - Retrieves information about all bike stations
-- `GET /stations/byFID/:fid` - Retrieves information about a specific bike station by its FID
-- `GET /journeys/sorted/:param1/:param2/:param3/:param4` - Retrieves information about bike journeys sorted by certain parameters
+-   `GET /stations/all` - Retrieves information about all bike stations
+-   `GET /stations/byFID/:fid` - Retrieves information about a specific bike station by its FID
+-   `GET /journeys/sorted/:param1/:param2/:param3/:param4` - Retrieves information about bike journeys sorted by certain parameters
 
 ## Database
 
@@ -32,7 +31,7 @@ This server uses MongoDB Atlas as its database.
 
 To connect to the database, you will need to configure the following environment variable:
 
-- `MONGOURI` - The URI to connect to the MongoDB Atlas cluster.
+-   `MONGOURI` - The URI to connect to the MongoDB Atlas cluster.
 
 Below is provided connection string with only read access to database.
 `MONGOURI=mongodb+srv://test:testonlyread@citybike.jzmzrm6.mongodb.net/bikedata?retryWrites=true&w=majority`
@@ -59,16 +58,32 @@ This will start a container and map the host's port 27017 to the container's por
 
 To run the tests, use the command `npm test`.
 
+## Continuous Integration (CI)
+
+This project uses GitHub Actions to automate the process of building, testing, and deploying the Citybike Server application. The CI workflow is triggered on every push to the `typescript` branch and for pull requests targeting the `typescript` branch.
+
+### CI Workflow Steps
+
+1. **Lint:** The workflow runs the linter to check for code style issues using `npm run lint`.
+
+2. **Run tests:** The workflow runs the unit tests using `npm test`.
+
+3. **Build:** The workflow builds the project using `npm run build`.
+
+### Deployment to Render
+
+The deployment to Render is triggered automatically after a push to the `typescript` branch.
+
 ## Deployment
 
-- The server is hosted on [Render](https://citybike.onrender.com)
-- The frontend is hosted on [Github Pages](https://tonikv.github.io/citybike-ui/)
+-   The server is hosted on [Render](https://citybike.onrender.com)
+-   The frontend is hosted on [Github Pages](https://tonikv.github.io/citybike-ui/)
 
 ## Acknowledgements
 
-- [Express.js](https://expressjs.com/)
-- [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
-- [Morgan](https://www.npmjs.com/package/morgan)
-- [Mongoose](https://www.npmjs.com/package/mongoose)
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
+-   [Express.js](https://expressjs.com/)
+-   [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+-   [Morgan](https://www.npmjs.com/package/morgan)
+-   [Mongoose](https://www.npmjs.com/package/mongoose)
+-   [Node.js](https://nodejs.org/)
+-   [npm](https://www.npmjs.com/)
