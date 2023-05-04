@@ -150,5 +150,7 @@ export const setStationUsageInformation = async (): Promise<void> => {
         station.Average_journey_distance_starting = averageDistanceStarting;
         station.Average_journey_distance_ending = averageDistanceEnding;
         await station.save();
+        // eslint-disable-next-line no-console
+        console.log(`Updated station ${station.Nimi}`);
     }
 };
