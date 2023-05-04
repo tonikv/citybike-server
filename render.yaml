@@ -1,7 +1,0 @@
-services:
-    - type: web
-      name: citybike-data
-      env: node
-      buildCommand: npm run build
-      startCommand: npm start
-      staticPublishPath: ./dist

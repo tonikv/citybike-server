@@ -40,12 +40,3 @@ jobs:
 
             - name: Build
               run: npm run build
-
-            - name: Install Render CLI
-              run: npm install -g render-cli
-
-            - name: Deploy to Render
-              run: render deploy --force --engine none
-              env:
-                RENDER_EMAIL: ${{ secrets.RENDER_EMAIL }}
-                RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
