@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 config();
 
 const URI: string =
-    process.env.MONGOURI || "mongodb://localhost:27017/citybike";
+    process.env.MONGOURI || "mongodb://localhost:27017/bikedata";
 
 const databaseConnect = async () => {
     try {
